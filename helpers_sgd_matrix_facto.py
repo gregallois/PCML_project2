@@ -115,8 +115,12 @@ def calculate_mse_from_matrix(M, prediction):
         outputs : 
         "mse" : float, mean square error of the prediction with respect to the original matrix 
     """
+    
     mse = 0
-    indices = non_zero_indices(M)
+    #list of indices associated to non zero entries
+    nz_row, nz_col = M.nonzero()
+    indices = list(zip(nz_row, nz_col))
+    
     for indic in indices:
         mse = mse + 0.5*(M[indic]-prediction[indic])**2
     return mse
@@ -206,6 +210,7 @@ def matrix_factorization_SGD(train, test, K, num_epochs, lambda_user, lambda_ite
 
     print("learn the matrix factorization using SGD...")
     for it in range(num_epochs):        
+        print("full pass number : ", it)
         # shuffle the training rating indices
         np.random.shuffle(nz_train)
         

@@ -19,7 +19,7 @@ import numpy as np
 import scipy.sparse as sp
 import csv
 
-############################################# Part One : data loading ############################################################
+############################################# Part One : data loading ###########################################################
 
 ### A) Load the data
 
@@ -55,7 +55,7 @@ valid_ratings, train, test = split_data(ratings, num_items_per_user, num_users_p
 ## Parameters for the matrix factorization
 
 # maximum and minimum numbers of features 
-max_K = 9
+max_K = 3 #9
 min_K= 3
 
 # incrementation step for K
