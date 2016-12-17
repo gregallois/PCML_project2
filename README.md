@@ -14,3 +14,5 @@ Your collaborative filtering algorithm is evaluated according to the prediction 
 2. All information of the task and some baselines are provided in Exercise 10:
 
  [https://github.com/epfml/ML_course/tree/master/labs/ex10]
+
+
