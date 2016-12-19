@@ -13,7 +13,7 @@ Each of them corresponds to a strategy, and generates a submission, using this s
 
 - run_sgd_matrix_factorization.py 
 - TO COMPLETE
-- run_RBM.py
+- TO COMPLETE 
 
 Important : the run file corresponding to our final submission is : TO COMPLETE
 
@@ -27,7 +27,7 @@ And the helpers associated to each strategy, and used by the corresponding run f
 
 - helpers_sgd_matrix_facto.py
 - TO COMPLETE
-- RBM_helpers.py
+- TO COMPLETE
 
 Finally, the data are located in the sub-folder : "datasets" where the submission csv files are also generated.
 
@@ -64,29 +64,3 @@ This script uses methods located in plots.py, helpers.py and helpers_sgd_matrix_
 
     This file gathers the helper functions needed to compute the matrix factorization through stochastic gradient descent. 
 The main function is matrix_factorization_SGD, whose implementation follows the one suggested by the td 10. The function called by matrix_factorization_SGD follow the suggestions of the TD10 as well. 
-
-
-
-
-	c) run_RBM.py
-
-	This strategy consists is training Restricted Boltzman Machines (one for each user) with common weights and biases. It consists in maximizing the likelihood of the dataset given a probability model defined from a normalized energy function. Training is done by gradient ascent, actualizing parameters one user at a time. 
-
-	- To avoid overfitting, noise is added to user ratings so that each rate is modified with 0,1 probability.
-	- Learning rate is chosen adaptatively at each epoch. 
-	- Training is done using Contrastive Divergence (CD3)
-	- Training stops after 10 epochs.
-	- Restricted Boltzman Machines are constituted of 30 hidden units.
-
-	The structure of the algorithm is as follows :
-	1) opening dataset
-	2) selecting only users with enough ratings (more than 200)
-	3) while number_of_epoch <= 10:
-		permutation of all users to select them in random order
-		updating learning rate
-		for each user:
-			perform a gradient ascent step
-
-	4) Onc finished : make predictions then log into csv file. 
-	
-	
